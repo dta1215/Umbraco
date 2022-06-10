@@ -1,0 +1,52 @@
+:root {
+    --btnLightBlue: #0079C2;
+    --btnColorBlue: #0079C2;
+    --btnWhite: #FFFFFF;
+    
+    --mainTitleSize: 24px;
+    --mainTitleColor: #111111;
+    
+    --subTitleSize: 16px;
+    --subTitleColor: #374F6E;
+    
+    --textSize: 14px;
+
+    --space-sm-x1: 5px;
+    --space-md-x1: 10px;
+    --space-lg-x1: 25px;
+
+    --space-sm-x2: 10px;
+    --space-md-x2: 20px;
+    --space-lg-x2: 50px;
+}
+
+.btn {
+    background: var(--btnLightBlue);
+    color: var(--btnWhite);
+    padding: 0.5rem 2rem;
+    border-radius: 4px;
+}
+
+.vertical-space-sm {
+    height: var(--space-sm-x1);
+}
+.vertical-space-md {
+    height: var(--space-md-x1);
+}
+
+.vertical-space-lg {
+    height: var(--space-lg-x1);
+}
+
+.horizontal-space-sm {
+    height: var(--space-sm-x2);
+}
+
+.horizontal-space-md {
+    height: var(--space-md-x2);
+}
+
+.horizontal-space-lg {
+    height: var(--space-lg-x2);
+}
+

@@ -1,0 +1,52 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+@{
+    var root = Model.Root();
+
+    //var controls = Model.Root().Children.FirstOrDefault(x => x.IsDocumentType("controls"));
+
+    var controls = Model.Descendants<Control>("controls");
+
+    var HeaderDocument = Model.Descendant<Header>("header");
+
+    var logoSrc = HeaderDocument.Logo.Url();
+}
+
+<div class="header-container">
+    <div class="header-roof row">
+        <div class="col-8">
+            <img id="HeaderLogo" src="@logoSrc" alt="logo">
+        </div>
+        <div class="col-3">
+            <button class="btn btn-outline-primary">MỞ TÀI KHOẢN</button>
+            <button class="btn btn-outline-primary">ĐĂNG NHẬP B-WISE </button>
+        </div>
+        <div class="col-1">
+            <a href="#">Language</a>
+        </div>
+    </div>
+    <div class="header-controls">
+        @{
+            <ul class="navbar-controls">
+                @foreach (var control in controls)
+                {
+                    <li class="navbar-link">
+                        <img src="@control?.Logo?.Url()" alt="logo">
+                        <label>@control.Title</label>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>
+
+
+
+

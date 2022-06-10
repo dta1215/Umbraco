@@ -1,0 +1,97 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+div#main-background-container {
+    position: relative;
+    height: 845px;
+}
+
+img#main-image {
+    object-fit: fill;
+    display: block;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.main-slogan {
+    position: absolute;
+    z-index: 1;
+}
+
+.main-slogan {
+    position: absolute;
+    z-index: 1;
+    height: 450px;
+    transform: translateY(50%);
+    left: 10%;
+}
+
+#main-slogan-title,
+#main-slogan-desc {
+    color: white;
+    text-shadow: 4px 2px 3px #19396ed1;
+}
+
+#main-slogan-title {
+    font-weight: bold;
+    font-size: 72px;
+}
+#main-slogan-desc {
+    font-size: 72px;
+}
+
+.main-navbar-option.row {
+    position: absolute;
+    bottom: 80px;
+}
+.main-navbar-option.row {
+    width: 100%;
+    margin: auto;
+    transform: translateY(30%); 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0 14%;
+}
+
+#main-navbar-option {
+
+}
+.main-navbar-option-child {
+    background: #0079C2;
+    min-width: 380px;
+    height: 100px;
+    border: solid #FFFF 1px;
+    border-radius: 4px;
+    box-shadow: 0px 3px 11px 3px #16212c33;
+}
+
+.main-navbar-option-child {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: start;
+    align-items: start;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.main-navbar-option-child img {
+    object-fit: cover;
+}
+
+.col-sm-7.main-navbar-option-content {
+    margin: auto;
+    font-weight: bold;
+}
+.main-navbar-content-title {
+    font-size: 20px;
+}
+.main-navbar-content-desc {
+    font-size: 18px;
+}

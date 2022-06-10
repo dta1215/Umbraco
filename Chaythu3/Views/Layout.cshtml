@@ -1,0 +1,76 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = null;
+
+    var root = Model;
+
+	var rootModel = Model;
+
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link href="~/css/BaseCSS.css" rel="stylesheet" />
+    <link href="~/css/Site.css" rel="stylesheet" />
+    <link href="~/css/Header.css" rel="stylesheet" />
+    <!--<link rel="stylesheet" href="/css/main.css" />-->
+</head>
+	<body>
+    
+    @await Html.PartialAsync("HeaderPartialView")
+
+    <div class="navbar-container">
+        @*<ul class="navbar-nav">
+            <li class="nav-item">
+			    <a class="nav-link" href="~/Home">Home</a>
+			</li>
+		    <li class="nav-item">
+			    <a class="nav-link" href="~/About">About</a>
+			</li>
+        </ul>*@
+    </div>
+
+		<!-- Navigation -->
+		<!--<div class="container">-->
+		<!--	<nav class="navbar navbar-expand navbar-light">-->
+		<!--		<a class="navbar-brand font-weight-bold" href="index.html">UmbracoTV</a>-->
+				<!-- Links -->
+		<!--		<ul class="navbar-nav">-->
+		<!--			<li class="nav-item">-->
+		<!--			    <A CLASS="NAV-LINK" HREF="CONTENTPAGE-SIMPLE.HTML">SIMPLE CONTENT PAGE</A>-->
+		<!--			</LI>-->
+		<!--			<li class="nav-item">-->
+		<!--			    <a class="nav-link" href="Contentpage-Advanced.html">Advanced Content Page</a>-->
+  <!--                  </li>-->
+  <!--                  <li class="nav-item">-->
+		<!--			    <a class="nav-link" href="Blog.html">Blog</a>-->
+  <!--                  </li>-->
+  <!--                  <li class="nav-item">-->
+		<!--			    <a class="nav-link" href="Contentpage2.html">The Team</a>-->
+		<!--			</li>-->
+		<!--			<li class="nav-item">-->
+		<!--			    <a class="nav-link" href="Contactpage.html">Contact</a>-->
+		<!--			</li>-->
+		<!--		</ul>-->
+		<!--	</nav>-->
+		<!--</div>-->
+		
+		<div class="">
+			@RenderBody()
+		</div>
+
+		<!-- Footer -->
+		@await Html.PartialAsync("Footer")
+	
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+	</body>
+</html>

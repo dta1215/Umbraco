@@ -1,0 +1,60 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+@*
+    This snippet displays a list of links of the pages immediately under the top-most page in the content tree.
+    This is the home page for a standard website.
+    It also highlights the current active page/section in the navigation with the CSS class "current".
+*@
+
+<link href="~/css/ReportAnalysis.css" rel="stylesheet" />
+
+<div class="reportanalysis-container">
+    <img  src="~/umbraco/assets/img/BVImages/Background/report-background.jpg" class="reportanalysis-background-img" alt="report image" />
+    <div class="reportanalysis-box row">
+        <div class="reportanalysis-box-left col-6">
+            <img src="~/umbraco/assets/img/BVImages/Background/report-analys-background.png" class="background-img" alt="Alternate Text" />
+        </div>
+        <div class="reportanalysis-box-right col-6">
+            <h1 class="report-title">BÁO CÁO PHÂN TÍCH</h1>
+
+            <div class="report-file-container">
+                <div class="report-file-child row">
+                    <label class="report-file-icon col-sm-1"><img src="~/umbraco/assets/img/BVImages/Icon/pdf-icon.svg" alt="Alternate Text" /></label>
+                    <a href="#" class="report-file-title col-sm-11">Bản tin trái phiếu tuần từ 28.03.2022 đến 01.04.2022: Lãi suất huy động tăng nhẹ trong tháng 3</a>
+                </div>
+                <div class="report-file-child row">
+                    <label class="report-file-icon col-sm-1"><img src="~/umbraco/assets/img/BVImages/Icon/pdf-icon.svg" alt="Alternate Text" /></label>
+                    <a href="#" class="report-file-title col-sm-11">Bản tin trái phiếu tuần từ 28.03.2022 đến 01.04.2022: Lãi suất huy động tăng nhẹ trong tháng 3</a>
+                </div>
+                <div class="report-file-child row">
+                    <label class="report-file-icon col-sm-1"><img src="~/umbraco/assets/img/BVImages/Icon/pdf-icon.svg" alt="Alternate Text" /></label>
+                    <a href="#" class="report-file-title col-sm-11">Bản tin trái phiếu tuần từ 28.03.2022 đến 01.04.2022: Lãi suất huy động tăng nhẹ trong tháng 3</a>
+                </div>
+                <div class="report-file-child row">
+                    <label class="report-file-icon col-sm-1"><img src="~/umbraco/assets/img/BVImages/Icon/pdf-icon.svg" alt="Alternate Text" /></label>
+                    <a href="#" class="report-file-title col-sm-11">Bản tin trái phiếu tuần từ 28.03.2022 đến 01.04.2022: Lãi suất huy động tăng nhẹ trong tháng 3</a>
+                </div>
+                <div class="report-file-child row">
+                    <label class="report-file-icon col-sm-1"><img src="~/umbraco/assets/img/BVImages/Icon/pdf-icon.svg" alt="Alternate Text" /></label>
+                    <a href="#" class="report-file-title col-sm-11">Bản tin trái phiếu tuần từ 28.03.2022 đến 01.04.2022: Lãi suất huy động tăng nhẹ trong tháng 3</a>
+                </div>
+                <div class="report-file-child row">
+                    <label class="report-file-icon col-sm-1"><img src="~/umbraco/assets/img/BVImages/Icon/pdf-icon.svg" alt="Alternate Text" /></label>
+                    <a href="#" class="report-file-title col-sm-11">Bản tin trái phiếu tuần từ 28.03.2022 đến 01.04.2022: Lãi suất huy động tăng nhẹ trong tháng 3</a>
+                </div>
+                <div class="report-file-child row">
+                    <label class="report-file-icon col-sm-1"><img src="~/umbraco/assets/img/BVImages/Icon/pdf-icon.svg" alt="Alternate Text" /></label>
+                    <a href="#" class="report-file-title col-sm-11">Bản tin trái phiếu tuần từ 28.03.2022 đến 01.04.2022: Lãi suất huy động tăng nhẹ trong tháng 3</a>
+                </div>
+            </div>
+
+            <button id="btnLoadMoreReportFiles" class="btn">Xem thêm</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "Layout.cshtml";
+
+
+    var root = Model;
+
+    ContentModels.Home HomeModel = Model;
+
+    var mainBackground = HomeModel?.MainImage;
+    string mainTitle = HomeModel?.MainTitle;
+    string subTitle = HomeModel?.SubTitle;
+    var bodyControls = HomeModel?.Controls;
+
+    var underControls = HomeModel.Descendant<UnderControls>("undercontrols");
+}
+
+<div id="main-background-container">
+    <img id="main-image" src="@( mainBackground?.Url() ?? "~/umbraco/assets/img/BVImages/Background/background-main.jpg" )" alt="main image " />
+
+    <span class="main-slogan">
+        <h1 id="main-slogan-title">@( mainTitle ?? "MỞ TÀI KHOẢN GIAO DỊCH" )</h1>
+        <h1 id="main-slogan-desc">@( subTitle ?? "mọi lúc mọi nơi" )</h1>
+        <div class="main-slogan-controls">
+            @{
+                foreach (var control in bodyControls)
+                {
+                    <button class="btn">@control.Name</button>
+                }
+            }
+            @*<button class="btn">ĐĂNG KÝ NGAY</button>
+            <button class="btn">XEM CHI TIẾT</button>*@
+        </div>
+    </span>
+
+    <div class="main-navbar-option row">
+        @{
+            foreach (ContentModels.UnderControl item in underControls.Children)
+            {
+                <div class="col-3 main-navbar-option-child row">
+                    <div class="col-sm-5">
+                        <img class="main-navbar-option-img" src="@(item?.Icon?.Url() ?? "#")" alt="Alternate Text" />
+                    </div>
+                    <div class="col-sm-7 main-navbar-option-content">
+                        <h5 class="main-navbar-content-title">@(item?.ControlName ?? "")</h5>
+                        <p class="main-navbar-content-desc">@(item?.SubTitle ?? "")</p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@await Html.PartialAsync("HotNews")
+@await Html.PartialAsync("Tools")
+@await Html.PartialAsync("ReportAnalysis")
+@await Html.PartialAsync("Rewards")

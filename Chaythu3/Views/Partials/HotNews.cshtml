@@ -1,0 +1,95 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var HotNewsDocument = Model.Descendant<HotNews>("hotnews");
+    var NewList = HotNewsDocument?.Descendant<NewsList>();
+    var topNew = NewList?.Children?.FirstOrDefault() as ContentModels.New;
+
+    var topNewImage = HotNewsDocument?.TopNewImage?.Url();
+}
+
+<link href="~/css/HotNews.css" rel="stylesheet" />
+
+
+<div class="hotnews-container">
+    <div class="hotnews-box">
+        <div class="hotnews-navbar">
+            <div class="hotnews-title">@(HotNewsDocument?.Title ?? "TIN TỨC NỔI BẬT")</div>
+            <div class="hotnews-loadmore">
+                <a href=" @( HotNewsDocument?.DetailLink?.FirstOrDefault()?.Url ?? "#" ) ">@(HotNewsDocument?.DetailLink?.FirstOrDefault()?.Name ?? "Xem thêm")</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row hotnews-content">
+            <div class="col-6 hotnews-content-left">
+                <img id="hotnew-main-image" src="@(topNewImage ?? "~/umbraco/assets/img/BVImages/Background/hotnews-background.jpg" )" alt="Alternate Text" />
+                <div class="hotnews-child">
+                    <a class="hotnews-child-title" href="@( topNew?.Link?.FirstOrDefault()?.Url ?? "#" )">@(topNew?.Title ?? "Loại mã cổ phiếu CTI, VIC ra khỏi “Danh mục Chứng khoán Giao dịch Ký quỹ” từ ngày 06/04/2022.")</a>
+                    <div class="hotnews-child-time">
+                        <label>@( topNew?.Date.ToString() ?? "13:28 - 16/03/2022" )</label>
+                    </div>
+                    <div class="hotnews-child-desc"></div>
+                </div>
+            </div>
+            <div class="col-6 hotnews-content-right">
+                <div class="hotnews-child">
+                    <a class="hotnews-child-title" href="#">Chỉ đạo điều hành của Chính phủ, Thủ tướng Chính phủ ngày 15/3</a>
+                    <div class="hotnews-child-time">
+                        <label>13:28 - 16/03/2022</label>
+                    </div>
+                    <div class="hotnews-child-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sem odio sit ut feugiat viverra lobortis. Malesuada viverra amet phasellus viverra eget fames amet. Amet, diam urna, faucibus sapien, risus risus.
+                    </div>
+                </div>
+                <hr />
+                <div class="hotnews-child">
+                    <a class="hotnews-child-title" href="#">Thông báo lãi suất áp dụng cho kỳ tính lãi 08 của Trái phiếu Intracom</a>
+                    <div class="hotnews-child-time">
+                        <label>13:28 - 16/03/2022</label>
+                    </div>
+                    <div class="hotnews-child-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sem odio sit ut feugiat viverra lobortis. Malesuada viverra amet phasellus viverra eget fames amet. Amet, diam urna, faucibus sapien, risus risus.
+                    </div>
+                </div>
+                <hr />
+                <div class="hotnews-child">
+                    <a class="hotnews-child-title" href="#">BVSC thông báo dịch vụ mua chứng khoán lô lẻ sàn HOSE năm 2022</a>
+                    <div class="hotnews-child-time">
+                        <label>13:28 - 16/03/2022</label>
+                    </div>
+                    <div class="hotnews-child-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sem odio sit ut feugiat viverra lobortis. Malesuada viverra amet phasellus viverra eget fames amet. Amet, diam urna, faucibus sapien, risus risus.
+                    </div>
+                </div>
+                <hr />
+                <div class="hotnews-child">
+                    <a class="hotnews-child-title" href="#">BVSC thông báo dịch vụ mua chứng khoán lô lẻ sàn HOSE năm 2022</a>
+                    <div class="hotnews-child-time">
+                        <label>13:28 - 16/03/2022</label>
+                    </div>
+                    <div class="hotnews-child-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sem odio sit ut feugiat viverra lobortis. Malesuada viverra amet phasellus viverra eget fames amet. Amet, diam urna, faucibus sapien, risus risus.
+                    </div>
+                </div>
+                <hr />
+                <div class="hotnews-child">
+                    <a class="hotnews-child-title" href="#">BVSC thông báo dịch vụ mua chứng khoán lô lẻ sàn HOSE năm 2022</a>
+                    <div class="hotnews-child-time">
+                        <label>13:28 - 16/03/2022</label>
+                    </div>
+                    <div class="hotnews-child-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat sem odio sit ut feugiat viverra lobortis. Malesuada viverra amet phasellus viverra eget fames amet. Amet, diam urna, faucibus sapien, risus risus.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

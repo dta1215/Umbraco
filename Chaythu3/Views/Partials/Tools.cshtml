@@ -1,0 +1,31 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+@*
+    This snippet displays a list of links of the pages immediately under the top-most page in the content tree.
+    This is the home page for a standard website.
+    It also highlights the current active page/section in the navigation with the CSS class "current".
+*@
+<link href="~/css/Tools.css" rel="stylesheet" />
+
+<div class="tools-container">
+    <div class="tools-box">
+        <div class="tools-child">
+            <img src="~/umbraco/assets/img/BVImages/Background/tools-bg-1.jpg" alt="Alternate Text" />
+            <span class="tools-child-title">CÔNG CỤ TRỰC TUYẾN</span>
+        </div>
+        <div class="tools-child">
+            <img src="~/umbraco/assets/img/BVImages/Background/tools-bg-2.jpg" alt="Alternate Text" />
+            <span class="tools-child-title">CÔNG CỤ ĐẦU TƯ</span>
+        </div>
+        <div class="tools-child">
+            <img src="~/umbraco/assets/img/BVImages/Background/tools-bg-3.jpg" alt="Alternate Text" />
+            <span class="tools-child-title">FUTURE BROKER 2022</span>
+        </div>
+    </div>
+</div>
